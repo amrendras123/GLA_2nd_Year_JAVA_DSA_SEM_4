@@ -18,5 +18,6 @@ class String1{
 
         // int[] arr={1,2,34};
         // System.out.println(arr);
+        
     }
 }
