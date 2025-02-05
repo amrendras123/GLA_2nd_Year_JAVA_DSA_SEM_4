@@ -6,7 +6,7 @@ public class MergeSort {
         print(arr);
     }
     public static void Divide(int[] arr,int lo,int hi){
-        if(lo>hi){
+        if(lo>=hi){
             return;
         }
         int mid=(lo+hi)/2;
@@ -41,12 +41,17 @@ public class MergeSort {
             i++;
             k++;
         }
+        for(int idx=0;idx<ans.length;idx++){
+            arr[lo]=ans[idx];
+            lo++;
+        }
         
     }
     public static void print(int[] arr){
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]+" ");
         }
+        System.out.println();
         System.out.println("**************************************");
     }
 }
