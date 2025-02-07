@@ -1,6 +1,6 @@
 public class TOh {
     public static void main(String[] args) {
-        int n=3;
+        int n=5;
         toh(n,"A","B","c");
     }
     public static void toh(int n,String t1,String t2,String t3){
