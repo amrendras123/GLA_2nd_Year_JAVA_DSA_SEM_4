@@ -79,7 +79,6 @@ class Tree{
     int l=max(root.left);
     int r=max(root.right);
     return Math.max(root.val,Math.max(l,r));
-
    }
 
 }
