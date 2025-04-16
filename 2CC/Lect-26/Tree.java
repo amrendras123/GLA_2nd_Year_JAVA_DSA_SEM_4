@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 class Tree {
@@ -88,6 +90,70 @@ class Tree {
         int l = max(root.left);
         int r = max(root.right);
         return Math.max(root.val, Math.max(l, r));
+    }
+    public void preOrder(){
+        preOrder(root);
+    }
+    private void preOrder(Node root){
+        if(root==null){
+            return;
+        }
+        System.out.print(root.val+" ");
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+    public void inOrder(){
+        inOrder(root);
+    }
+    private void inOrder(Node root){
+        if(root==null){
+            return;
+        }
+        inOrder(root.left);
+        System.out.print(root.val+" ");
+        inOrder(root.right);
+    }
+    public void postOrder(){
+        postOrder(root);
+    }
+    private void postOrder(Node root){
+        if(root==null){
+            return;
+        }
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.val+" ");
+    }
+    public void leveOrder(){
+        leveOrder(root);
+    }
+    private void leveOrder(Node root){
+        Queue<Node> q=new LinkedList<>();//queue using LL
+        q.add(root);// add root to the queue
+        while(!q.isEmpty()){
+
+            Node rv=q.poll();//remove
+            System.out.print(rv.val+" ");//print
+            if(rv.left!=null){// add left 
+                q.add(rv.left);
+            }
+            if(rv.right!=null){//add right 
+                q.add(rv.right);
+            }
+        }
+        
+    }
+    public int ht(){
+       return ht(root);
+    }
+    private int ht(Node root){
+
+        if(root==null){
+            return 0;
+        }
+        int lht=ht(root.left);
+        int rht=ht(root.right);
+        return Math.max(lht,rht)+1;
     }
 
 }
